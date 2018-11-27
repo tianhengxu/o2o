@@ -10,6 +10,6 @@ import java.io.File;
  * Created by sky on 2018/11/27.
  */
 @Service
-public interface ShopService {
+public interface ShopService {//
      ShopExecution addShop(Shop shop, File file);
 }
