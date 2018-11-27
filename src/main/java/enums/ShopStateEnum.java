@@ -5,7 +5,7 @@ package enums;
  */
 public enum  ShopStateEnum {
     CHECK(0,"审核中"),OFFLINE(-1,"非法店铺"),
-    PASS(2,"通过认证"),SUCCESS(1,"操作成功");
+    PASS(2,"通过认证"),SUCCESS(1,"操作成功"),FAIL(3,"操作失败");
     private String stateInfo;
     private  int state;
     private  ShopStateEnum(int state,String stateInfo){
@@ -30,5 +30,6 @@ public enum  ShopStateEnum {
                 return  shopStateEnum;
             }
         }
+        return null;
     }
 }

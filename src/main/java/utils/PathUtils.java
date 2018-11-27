@@ -4,7 +4,7 @@ package utils;
  * Created by sky on 2018/11/26.
  */
 public class PathUtils {
-    private  static  String seperator=System.getProperty("file.operator");
+    private  static  String seperator=System.getProperty("file.separator");
     public  static  String getImageBasePath(){
         String os=System.getProperty("os.name");
         String basePath="";
@@ -16,8 +16,8 @@ public class PathUtils {
         basePath=basePath.replace("/",seperator);
         return  basePath;
     }
-    public  static  String getShopImagePath(){
-        String imagePath="D:/uplode/item/shop/shopid";
+    public  static  String getShopImagePath(long shopid){
+        String imagePath="uplode/item/shop/"+shopid;
         return  imagePath;
     }
 }

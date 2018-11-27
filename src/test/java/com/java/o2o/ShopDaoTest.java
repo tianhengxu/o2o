@@ -1,24 +1,24 @@
 package com.java.o2o;
 
 import com.BaseTest;
-import dao.ShopDao;
 import model.Area;
 import model.PersionInfo;
 import model.Shop;
 import model.ShopCategory;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import service.ShopService;
+import vo.ShopExecution;
 
+import java.io.File;
 import java.util.Date;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * Created by sky on 2018/11/19.
  */
 public class ShopDaoTest extends BaseTest{
     @Autowired
-    private ShopDao shopDao;
+    private ShopService shopService;
     @Test
     public void addshop(){
         Shop shop=new Shop();
@@ -31,14 +31,13 @@ public class ShopDaoTest extends BaseTest{
         shop.setArea(area);
         shop.setShopCategory(shopCategory);
         shop.setPersionInfo(persionInfo);
-        shop.setAdvice("好好干1！");
+        shop.setAdvice("耐心等待！");
         shop.setLastEditTime(new Date());
-        shop.setShopName("珍珠奶茶店");
-        shop.setPhone("13723412312");
-        shop.setShopDesc("百年老店");
-        shop.setShopId(1L);
-
-        int id=shopDao.updateShop(shop);
-        assertEquals(1,id);
+        shop.setShopName("美食店");
+        shop.setPhone("1376666666");
+        shop.setShopDesc("網紅店");
+        File file=new File("C:\\Users\\sky\\Desktop\\image\\robot.jpg");
+        ShopExecution execution=shopService.addShop(shop,file);
+        System.out.println(execution.getState());
     }
 }
