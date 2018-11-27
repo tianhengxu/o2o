@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Created by sky on 2018/11/26.
+ *
  */
 public class ShopExecution {
     //结果状态
